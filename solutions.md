@@ -678,10 +678,9 @@ Notice that because `id` is a column name in both `game` and `eteam` you must sp
 ```sql
   SELECT DISTINCT name FROM casting
   JOIN actor ON actorid = actor.id
-  WHERE movieid IN (SELECT movieid
-		                FROM movie
-		                JOIN casting ON movieid = movie.id
-		                JOIN actor ON actorid = actor.id
+  WHERE movieid IN (SELECT movieid FROM movie
+		    JOIN casting ON movieid = movie.id
+                    JOIN actor ON actorid = actor.id
                     WHERE actor.name = 'Art Garfunkel')
   AND name != 'Art Garfunkel';
 ```
