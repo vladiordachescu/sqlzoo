@@ -69,8 +69,7 @@
  ```
 ---
 7. Two ways to be big: A country is **big** if it has an area of more than 3 million sq km or it has a population of more than 250 million.\
-
-**Show the countries that are big by area or big by population. Show name, population and area.**
+   **Show the countries that are big by area or big by population. Show name, population and area.**
 
  ```sql
    SELECT name, population, area FROM world
@@ -90,7 +89,7 @@
  ```
 ---
 9. Show the `name` and `population` in millions and the GDP in billions for the countries of the `continent` 'South America'. Use the [ROUND](https://sqlzoo.net/wiki/ROUND) function to show the values to two decimal places.\
-**For Americas show population in millions and GDP in billions both to 2 decimal places.**
+   **For Americas show population in millions and GDP in billions both to 2 decimal places.**
 
  ```sql
    SELECT name, ROUND(population/1000000, 2), ROUND(gdp/1000000000, 2) FROM world
