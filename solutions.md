@@ -25,7 +25,7 @@
    WHERE area BETWEEN 200000 AND 250000;   
  ```
 ---
-
+&nbsp;
 ## SELECT FROM world
 
 1. [Read the notes about this table](https://sqlzoo.net/wiki/Read_the_notes_about_this_table.). Observe the result of running this SQL command to show the name, continent and population of all countries.
@@ -136,7 +136,7 @@
      AND name NOT LIKE '% %';
  ```
 ---
-
+&nbsp;
 ## SELECT FROM nobel
 ![nobel](https://github.com/user-attachments/assets/a5cc2b7f-483f-4044-bfee-673ffd5175e9)
 
@@ -262,7 +262,7 @@ Alternatively:
   ORDER BY IF(subject IN ('physics','chemistry'), 1, 0), subject,winner;
 ```
 ---
-
+&nbsp;
 ## SELECT within SELECT (subqueries)
 ![subqueries](https://github.com/user-attachments/assets/ddc3adef-7d24-455a-8b66-62664eba6f00)
 
@@ -353,7 +353,7 @@ Alternatively:
   WHERE y.continent=x.continent AND y.name != x.name);
 ```
 ---
-
+&nbsp;
 ## SUM and COUNT
 
 1. Show the total `population` of the world.
@@ -412,3 +412,4 @@ Alternatively:
   HAVING SUM(population)>=100000000;
 ```
 ---
+&nbsp;
