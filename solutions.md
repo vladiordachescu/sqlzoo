@@ -3,14 +3,14 @@
 ![world](https://github.com/user-attachments/assets/62b596ad-7c01-4611-a6eb-5060ee894b3a)
 
 1. The example uses a WHERE clause to show the population of 'France'. Note that strings should be in 'single quotes';
-   Modify it to show the population of Germany
+   \nModify it to show the population of Germany
    
 ```sql
   SELECT population FROM world
   WHERE name = 'Germany';
 ```
 2. Checking a list The word IN allows us to check if an item is in a list. The example shows the name and population for the countries 'Brazil', 'Russia', 'India' and 'China'.
-   Show the name and the population for 'Sweden', 'Norway' and 'Denmark'.
+   \nShow the name and the population for 'Sweden', 'Norway' and 'Denmark'.
 
 ```sql
   SELECT name, population FROM world
