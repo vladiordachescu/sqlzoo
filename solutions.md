@@ -919,6 +919,6 @@ Details of the database Looking at the data
                                          ORDER BY rnk, constituency
                                          ) x
          WHERE x.rnk=1) y
-  GROUP BY party
+  GROUP BY party;
 ```
 ---
