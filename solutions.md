@@ -766,7 +766,7 @@ Using the [COALESCE](https://sqlzoo.net/wiki/COALESCE) function
 ## SELF JOIN
 Details of the database Looking at the data
 
-`stops(id, name)\
+`stops(id, name)
 route(num, company, pos, stop)`
 
 1. How many stops are in the database.
