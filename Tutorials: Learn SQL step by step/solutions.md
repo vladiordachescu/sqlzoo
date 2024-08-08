@@ -1018,3 +1018,64 @@ WHERE whn = '2020-04-20' AND population > 10000000
 ORDER BY population DESC;
 ```
 ---
+&nbsp;
+## DDL Student Records
+![hp](https://github.com/user-attachments/assets/5ef037a5-8cb2-43e3-ac1a-c1947d8b6adb)
+
+```sql
+CREATE TABLE student(
+	matric_no CHAR(8) PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth DATE
+);
+
+INSERT INTO student
+VALUES
+('40001010', 'Daniel', 'Radcliffe', '1989-07-23'),
+('40001011', 'Emma', 'Watson', '1990-04-15'),
+('40001012', 'Rupert', 'Giant', '1988-10-24');
+
+CREATE TABLE module(
+	module_code CHAR(8) PRIMARY KEY,
+    module_title VARCHAR(50),
+    `level` INT,
+    credits INT DEFAULT 20
+);
+
+INSERT INTO module
+(module_code, module_title, `level`)
+VALUES
+('HUF07101', 'Herbology', 7),
+('SLY07102', 'Defense Against the Dark Arts', 7),
+('HUF08102', 'History of Magic', 8);
+
+CREATE TABLE registration(
+	matric_no CHAR(8),
+    module_code CHAR(8),
+    result DECIMAL(4,1),
+    PRIMARY KEY(matric_no, module_code),
+    FOREIGN KEY(matric_no) REFERENCES student(matric_no),
+    FOREIGN KEY(module_code) REFERENCES module(module_code)
+);
+
+INSERT INTO registration
+VALUES
+('40001010', 'SLY07102', 90),
+('40001010', 'HUF07101', 40),
+('40001010', 'HUF08102', NULL),
+('40001011','SLY07102', 99),
+('40001011','HUF08102', NULL),
+('40001012','SLY07102', 20),
+('40001012','HUF07101', 20);
+
+SELECT first_name, last_name, result,
+       (CASE
+         WHEN result <= 39 THEN 'F'
+         WHEN result BETWEEN 40 AND 69 THEN 'P'
+         WHEN result >=  70 THEN 'M'
+       END) AS outcome   
+FROM student
+JOIN registration ON student.matric_no=registration.matric_no
+WHERE module_code='SLY07102';
+```
