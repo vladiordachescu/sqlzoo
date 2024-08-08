@@ -1024,7 +1024,7 @@ ORDER BY population DESC;
 
 ```sql
 CREATE TABLE student(
-	matric_no CHAR(8) PRIMARY KEY,
+    matric_no CHAR(8) PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     date_of_birth DATE
@@ -1037,7 +1037,7 @@ VALUES
 ('40001012', 'Rupert', 'Giant', '1988-10-24');
 
 CREATE TABLE module(
-	module_code CHAR(8) PRIMARY KEY,
+    module_code CHAR(8) PRIMARY KEY,
     module_title VARCHAR(50),
     `level` INT,
     credits INT DEFAULT 20
@@ -1051,7 +1051,7 @@ VALUES
 ('HUF08102', 'History of Magic', 8);
 
 CREATE TABLE registration(
-	matric_no CHAR(8),
+    matric_no CHAR(8),
     module_code CHAR(8),
     result DECIMAL(4,1),
     PRIMARY KEY(matric_no, module_code),
