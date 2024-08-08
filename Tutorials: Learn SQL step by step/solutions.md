@@ -916,12 +916,12 @@ Details of the database Looking at the data
                                          FROM ge
                                          WHERE constituency LIKE 'S%'
                                          AND yr=2017
-                                         ORDER BY rnk, constituency
                                          ) x
          WHERE x.rnk=1) y
   GROUP BY party;
 ```
 ---
+&nbsp;
 ## COVID 19 (Window LAG)
 
 1. The example uses a WHERE clause to show the cases in 'Italy' in March 2020.\
@@ -1012,8 +1012,9 @@ Notice that while Spain has the second highest confirmed cases, Italy has the se
   SELECT DISTINCT
    world.name,
    ROUND(100000*confirmed/population,2) infections,
-   RANK() OVER (ORDER BY confirmed/population) rnk
+   RANK() OVER (ORDER BY infections) rnk
   FROM covid JOIN world ON covid.name=world.name
 WHERE whn = '2020-04-20' AND population > 10000000
 ORDER BY population DESC;
 ```
+---
