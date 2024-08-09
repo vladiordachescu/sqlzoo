@@ -42,3 +42,6 @@ SELECT Shift.shift_date, Shift.shift_type, Staff.first_name, Staff.last_name FRO
 JOIN Shift ON Staff.staff_code=Shift.manager
 ORDER BY Shift.shift_date;
 ```
+&nbsp;
+
+## Helpdesk Medium Questions
