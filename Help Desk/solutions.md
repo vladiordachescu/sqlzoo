@@ -72,3 +72,5 @@ JOIN Issue ON Caller.caller_id=Issue.caller_id
 GROUP BY Customer.company_name
 HAVING nc<5;
 ```
+---
+9. 
