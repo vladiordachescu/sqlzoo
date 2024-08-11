@@ -73,4 +73,3 @@ GROUP BY Customer.company_name
 HAVING nc<5;
 ```
 ---
-9. 
